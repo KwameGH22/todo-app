@@ -1,6 +1,6 @@
 # DESIGN IMPLEMENTATION GUIDE
 
-## LANDING PAGE
+
 
 ## HEADER COMPONENT
 - In the provided React code, the HTML elements have a parent-child relationship, forming a hierarchical structure. Let's describe the relationships between the HTML elements:
