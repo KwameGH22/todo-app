@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import './App.css'
+import Header from './components/Header'
+import Form from './components/Form'
+import Card from './components/Card'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <div className={`min-h-screen pb-20 ${
@@ -12,6 +15,9 @@ function App() {
     }`}>
         <div className='w-full h-52 m-auto bg-bg-desktop bg-cover bg-no-repeat'>
             {/* Content goes here */}
+            <Header/>
+            <Form/>
+            <Card/>
         </div>
     </div>
   )
