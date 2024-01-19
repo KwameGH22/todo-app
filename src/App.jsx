@@ -1,11 +1,15 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import './App.css'
 import Header from './components/Header'
 import Form from './components/Form'
 import Card from './components/Card'
+import { AppContext } from './context/AppContextProvider'
+import TaskFilter from './components/TaskFilter'
+import TaskStats from './components/TaskStats'
+
 
 function App() {
-  
+  const {darkTheme, keepFiltering} = useContext(AppContext);
 
   return (
     <div className={`min-h-screen pb-20 ${
@@ -17,7 +21,9 @@ function App() {
             {/* Content goes here */}
             <Header/>
             <Form/>
-            <Card/>
+            <TaskFilter/>
+            {keepFiltering()}
+            <TaskStats/>
         </div>
     </div>
   )
