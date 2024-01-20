@@ -6,14 +6,14 @@
 
 ```js
 <div className='lg:w-[50%] md:w-[50%] sm:w-[90%] m-auto max-sm:mx-[5%] lg:mx-auto'>
-        <div className='m-auto text-white flex items-center justify-between pt-14 pb-6 text-center'> 
-            <h1 className='flex items-center font-Outfit font-semibold text-3xl -tracking-tighter'>TODO</h1>
-            {darkTheme ? <BsSun onClick={handleTheming} className='text-2xl moon'/> : 
-              <FaMoon onClick={handleTheming} className='text-2xl text-white'/>  }
-               
-                
-        </div>
+    <div className='m-auto text-white flex items-center justify-between pt-14 pb-6 text-center'> 
+        <h1 className='flex items-center font-Outfit font-semibold text-3xl -tracking-tighter'>TODO</h1>
+        {darkTheme ? <BsSun onClick={handleTheming} className='text-2xl moon'/> : 
+            <FaMoon onClick={handleTheming} className='text-2xl text-white'/>  }
+            
+            
     </div>
+</div>
 
 ```
 - In the provided React code, the HTML elements have a parent-child relationship, forming a hierarchical structure. Let's describe the relationships between the HTML elements:

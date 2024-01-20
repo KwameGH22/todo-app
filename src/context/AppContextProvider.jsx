@@ -45,15 +45,15 @@ const AppContextProvider = ({children}) => {
     const keepFiltering = () => {
         if (filter === "all") {
           return todos.map(todo => (
-            <TaskView key={todo.id}/>
+            <TaskView key={todo.id} {...todo}/>
           ));
         } else if (filter === "active") {
           return todos.filter(todo => !todo.complete).map(todo => (
-            <TaskView key={todo.id}/>
+            <TaskView key={todo.id} {...todo}/>
           ));
         } else if (filter === "complete") {
           return todos.filter(todo => todo.complete).map(todo => (
-            <TaskView key={todo.id}/>
+            <TaskView key={todo.id} {...todo}/>
           ));
         }
         return null; // Nothing to return

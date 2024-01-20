@@ -1,0 +1,28 @@
+# DESIGN IMPLEMENTATION GUIDE
+
+
+
+## FORM COMPONENT
+
+
+
+```JS
+<div className={`${darkTheme? 'bg-[#0e033d]' : 'bg-white'}  lg:w-[50%] md:w-[50%] max-sm:mx-[5%] m-auto px-2 flex justify-between rounded`}>
+        <div>
+          <form onSubmit={handleSubmit} className='flex '>
+            <input type="text" placeholder="Create new ToDo item"  className={`${darkTheme? 'text-white': 'text-gray-400'} p-6 h-1 text-base rounded outline-none bg-transparent`}
+              onChange={(event) => setItemList(event.target.value)}
+              name = 'task'
+              value={itemList}
+              required
+              autoFocus
+            />
+          </form>
+        </div>
+        <div>
+          <button type="submit" className={`${darkTheme? ' bg-gradient-to-r from-[#9947D7] to-blue-700' : 'bg-blue-700'} btn text-lg font-bold text-white py-2 px-5 h-10 mt-1 rounded-2xl `} onClick={handleSubmit}>
+              Add
+          </button>
+        </div>
+    </div>
+```
