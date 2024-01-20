@@ -15,6 +15,7 @@ const Form = () => {
           <form onSubmit={handleSubmit} className='flex '>
             <input type="text" placeholder="Create new ToDo item"  className={`${darkTheme? 'text-white': 'text-gray-400'} p-6 text-base rounded h-1 outline-none bg-transparent`}
               onChange={(event) => setItemList(event.target.value)}
+              name = 'task'
               value={itemList}
               required
               autoFocus

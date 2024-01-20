@@ -3,36 +3,92 @@
 
 
 ## HEADER COMPONENT
-- In the provided React code, the HTML elements have a parent-child relationship, forming a hierarchical structure. Let's describe the relationships between the HTML elements:
 
-1. Outer Container (div with Tailwind CSS classes):
-    - Parent: None (top-level container).
-    - Children:
-        - Inner Container (div with Tailwind CSS classes).
-        
-2. Inner Container (div with Tailwind CSS classes):
-    - Parent: Outer Container.
-    - Children:
-        - Heading (h1 with Tailwind CSS classes).
-        - Conditional Rendering (BsSun or FaMoon based on darkMode).
+```js
+<div className='lg:w-[50%] md:w-[50%] sm:w-[90%] m-auto max-sm:mx-[5%] lg:mx-auto'>
+        <div className='m-auto text-white flex items-center justify-between pt-14 pb-6 text-center'> 
+            <h1 className='flex items-center font-Outfit font-semibold text-3xl -tracking-tighter'>TODO</h1>
+            {darkTheme ? <BsSun onClick={handleTheming} className='text-2xl moon'/> : 
+              <FaMoon onClick={handleTheming} className='text-2xl text-white'/>  }
+               
+                
+        </div>
+    </div>
 
-3. Heading (h1 with Tailwind CSS classes):
-    - Parent: Inner Container.
-    - Children: None.
-
-4. Conditional Rendering (BsSun or FaMoon based on darkMode):
-    - Parent: Inner Container.
-    - Children: None.
-
-- The structure can be visualized as follows:
-
-```plaintext
-- Outer Container (div with Tailwind CSS classes)
-  - Inner Container (div with Tailwind CSS classes)
-    - Heading (h1 with Tailwind CSS classes)
-    - Conditional Rendering (BsSun or FaMoon based on darkMode)
 ```
+- In the provided React code, the HTML elements have a parent-child relationship, forming a hierarchical structure. Let's describe the relationships between the HTML elements:
 
 In this structure, the outer container provides overall styling and layout directives. The inner container contains the heading and the conditional rendering of either the sun (BsSun) or the moon (FaMoon) icon based on the value of darkMode. The heading serves as the main title for this section.
 
 The conditional rendering suggests that the appearance of the content may change based on the state of darkMode, providing a dynamic and potentially interactive user experience.
+
+- **Outer Container (`div` with Tailwind CSS classes):**
+  - This is a top-level container providing overall styling and layout directives.
+  - It contains:
+    - Inner Container.
+
+- **Inner Container (`div` with Tailwind CSS classes):**
+  - Nested within the outer container, providing additional styling and layout directives.
+  - It contains:
+    - Heading (`h1` with Tailwind CSS classes).
+    - Conditional Rendering (either `BsSun` or `FaMoon` based on `darkTheme`).
+
+- **Heading (`h1` with Tailwind CSS classes):**
+  - Nested within the inner container, serving as the main title.
+  - It contains:
+    - Text content ("TODO").
+
+- **Conditional Rendering (either `BsSun` or `FaMoon` based on `darkTheme`):**
+  - Nested within the inner container, providing dynamic content based on the value of `darkTheme`.
+  - It includes:
+    - Event handling (onClick) that triggers the `handleTheming` function.
+
+- **Outer Container (`div` with Tailwind CSS classes):**
+
+| Class               | Meaning                                                                             |
+|---------------------|-------------------------------------------------------------------------------------|
+| `lg:w-[50%]`        | Sets the width to 50% of the parent container on large screens (`lg`).               |
+| `md:w-[50%]`        | Sets the width to 50% of the parent container on medium screens (`md`).              |
+| `sm:w-[90%]`        | Sets the width to 90% of the parent container on small screens (`sm`).               |
+| `m-auto`            | Centers the element horizontally and vertically using margin auto.                  |
+| `max-sm:mx-[5%]`    | On screens with a maximum width of small (`max-sm`), sets left and right margins to 5%. |
+| `lg:mx-auto`        | On large screens (`lg`), centers the element horizontally using margin auto.         |
+
+- **Inner Container (`div` with Tailwind CSS classes):**
+
+| Class               | Meaning                                                                             |
+|---------------------|-------------------------------------------------------------------------------------|
+| `m-auto`            | Centers the element horizontally and vertically using margin auto.                  |
+| `text-white`        | Sets the text color to white.                                                      |
+| `flex`              | Enables flex container layout.                                                     |
+| `items-center`      | Centers the items along the cross-axis in a flex container.                         |
+| `justify-between`   | Distributes items evenly along the main-axis in a flex container with space between them. |
+| `pt-14`             | Sets top padding to 14 units.                                                       |
+| `pb-6`              | Sets bottom padding to 6 units.                                                     |
+| `text-center`       | Centers the text horizontally.                                                     |
+
+
+- **Heading (`h1` with Tailwind CSS classes):**
+
+| Class               | Meaning                                                                             |
+|---------------------|-------------------------------------------------------------------------------------|
+| `flex`              | Enables flex container layout.                                                     |
+| `items-center`      | Centers the items along the cross-axis in a flex container.                         |
+| `font-Outfit`       | Applies a custom font family named "Outfit" (assuming it is defined in your styles).|
+| `font-semibold`     | Sets the font weight to semibold.                                                  |
+| `text-3xl`          | Sets the font size to 3xl (extra-large).                                           |
+| `-tracking-tighter` | Sets negative letter-spacing for tighter tracking.                                 |
+
+- **BssUN icon component ( with Tailwind CSS classes): ** 
+
+| Class     | Meaning                                      |
+|-----------|----------------------------------------------|
+| `text-2xl`| Sets the font size to 2xl (extra-large).      |
+| `moon`    | Applies styling specific to the 'moon' class.|
+
+- **FaMoon icon component ( with Tailwind CSS classes): ** 
+
+| Class        | Meaning                                      |
+|--------------|----------------------------------------------|
+| `text-2xl`   | Sets the font size to 2xl (extra-large).      |
+| `text-white` | Sets the text color to white.                 |

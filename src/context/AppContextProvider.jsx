@@ -56,7 +56,7 @@ const AppContextProvider = ({children}) => {
             <TaskView key={todo.id}/>
           ));
         }
-        return null; // No todos to render based on filter
+        return null; // Nothing to return
       };
 
     const completedItems = () => {
@@ -84,11 +84,9 @@ const AppContextProvider = ({children}) => {
     const handleTheming = () => {
         setDarkTheme(!darkTheme);
       }
-
+  
     const handleSubmit = (event) => {
-        event.preventDefault();
-        // add function here
-        //since we created the function in the App.jsx file we passed it as props to the form which also forwards it to the form file. so we just accept the prop in the form using the destructuring method
+        event.preventDefault();    
         addItem(itemList)
         setItemList("");
       }
